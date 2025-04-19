@@ -6,10 +6,14 @@ var conferenceName = "Go Conference"
 
 var conferenceName1 string = "Go Conference"
 
-func main() {
-	fmt.Println("Welcome to our conference booking application")
-	fmt.Println("Get you ticket from here to watch IPl")
-	fmt.Println(conferenceName)
+const conferenceTicket = 50
 
-	fmt.Printf("replace value %v", conferenceName1)
+func main() {
+	fmt.Println("Welcome to our", conferenceName, "booking application")
+	fmt.Println("Get you ticket from here to watch IPl")
+	fmt.Println(conferenceName, conferenceTicket)
+
+	fmt.Printf("replace value %v ", conferenceName1)
+
+	fmt.Printf("adsfdsaf %v", 1+2)
 }
