@@ -2,37 +2,34 @@ package main
 
 import "fmt"
 
-var conferenceName = "Go Conference"
-
-var conferenceName1 string = "Go Conference"
-
-const conferenceTicket = 50
-
-var userName string
-var userAge uint
-
 func main() {
-	dummmssssy := "value" // only apply for var
+	conferenceName := "Go Conference"
+	const conferenceTicket uint = 50
+	var remainingTickets uint = 50
 
-	fmt.Printf("Conference is %T \n %v", userName, dummmssssy)
-	fmt.Println("Welcome to our", conferenceName, "booking application")
-	fmt.Println("Get you ticket from here to watch IPl")
-	fmt.Println(conferenceName, conferenceTicket)
+	fmt.Println("Welcome to", conferenceName, "booking application")
+	fmt.Printf("We have total of %v tickets and %v are still available.\n", conferenceTicket, remainingTickets)
+	fmt.Println("Get your tickets here to attend")
 
-	fmt.Printf("replace value %v ", conferenceName1)
+	// fixed size array length values
+	var bookings = [50]string{"Santhoshkumar viswanathan"}
+	// var bolling [50]string
 
-	fmt.Printf("adsfdsaf %v", 1+2)
+	var fullName string
+	var age uint
 
-	// fmt.Scan(userName)  // we are just passing values only here so they can't stop
-	fmt.Scan(&userName) // we are passing as pointer of (memory address) but here they wait
+	fmt.Println("Please enter full name")
+	fmt.Scan(&fullName)
+	fmt.Println("Please enter age")
+	fmt.Scan(&age)
 
-	// default value will be empty string "",
-	// userName = "Santhosh"
-	// default value will be 0,
-	userAge = 26
+	bookings[0] = fullName
 
-	fmt.Println(userAge)
-	// fmt.Println(&userAge) // Pointer it will return the memory address
+	fmt.Printf("Hi %v this your name, and this is your age %v \n", fullName, age)
 
-	fmt.Print(userName, userAge)
+	fmt.Printf("The whole array %v \n", bookings)
+	fmt.Printf("The first array %v \n", bookings[0])
+	fmt.Printf("The type of  array %T \n", bookings)
+	fmt.Printf("The size of  array %v \n", len(bookings))
+
 }
