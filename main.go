@@ -12,12 +12,14 @@ func main() {
 	fmt.Println("Get your tickets here to attend")
 
 	// fixed size array length values
-	var bookings = [50]string{"Santhoshkumar viswanathan"}
+	// var bookings = [50]string{"Santhoshkumar viswanathan"}
 	// var bolling [50]string
+	bookings := [50]string{"Santhoshkumar viswanathan"}
 
 	// dynamic array length
 	// var bookings1 = []string{}
-	var bookings1 []string
+	// var bookings1 []string
+	bookings1 := []string{}
 
 	var fullName string
 	var age uint
@@ -40,7 +42,6 @@ func main() {
 	fmt.Printf("The size of  array %v \n", len(bookings))
 
 	// dynamic length
-
 	fmt.Printf("The whole array %v \n", bookings1)
 	fmt.Printf("The first array %v \n", bookings1[0])
 	fmt.Printf("The type of  array %T \n", bookings1)
