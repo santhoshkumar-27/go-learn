@@ -29,6 +29,7 @@ func main() {
 		}
 	}
 
+	// slice its dynamic
 	firstNames := []string{}
 
 	// for-each
@@ -47,7 +48,7 @@ func main() {
 		i++
 	}
 
-	fmt.Println("Dummy data", firstNames, len(firstNames))
+	fmt.Println("Dummy data", firstNames, len(firstNames), strings.Contains(firstNames[0], "@"), true && true, false || false, 1 >= 11, 1 != 0)
 
 }
 
