@@ -50,6 +50,12 @@ func main() {
 
 	fmt.Println("Dummy data", firstNames, len(firstNames), strings.Contains(firstNames[0], "@"), true && true, false || false, 1 >= 11, 1 != 0)
 
+	switch i {
+	case 5:
+		fmt.Println("switch statement printed")
+		break
+	}
+
 }
 
 // if condition {
