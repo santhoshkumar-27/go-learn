@@ -7,7 +7,15 @@ import (
 	"strings"
 )
 
-// global level scope we need to declare here only actual declaration, not the syentatic sugar syntax
+// struct holds the different data types in the key values pairs
+type UserData struct { // UserData is name of struct, type will be provide new custom data type
+	firstName string
+	lastName  string
+	email     string
+	phone     uint
+}
+
+// package level scope we need to declare here only actual declaration, not the syentatic sugar syntax
 var sharedVariableBTWFunc = "string values" // same like this we can share
 
 func main() {
@@ -16,8 +24,19 @@ func main() {
 
 	var bookingsWithMap = make([]map[string]string, 1)
 
+	var bookingsWithStruct = make([]UserData, 0)
+
 	// create a map for a user
 	var userData = make(map[string]string) // we can't mix the data type
+
+	var userDataWithStruct = UserData{
+		firstName: "santhoshkumar",
+		lastName:  "Viswanathan",
+		email:     "santhoshkumar@ownBrand.com",
+		phone:     9889898899,
+	}
+
+	bookingsWithStruct = append(bookingsWithStruct, userDataWithStruct)
 
 	userData["firstName"] = "Santhosh"
 	userData["lastName"] = "Kumar"
@@ -25,7 +44,13 @@ func main() {
 	userData["tickets"] = strconv.FormatUint(uint64(23), 10)
 
 	fmt.Println("bookingsWithMap", bookingsWithMap)
+	fmt.Println("bookingsWithMap", bookingsWithMap)
 	fmt.Println("userData", userData)
+	fmt.Println("userData firstName", userData["firstName"]) // for map we need access the property with array notations
+
+	fmt.Println("userDataWithStruct", userDataWithStruct)
+	fmt.Println("userDataWithStruct firstName", userDataWithStruct.firstName) // for struct we need access the property with dot notations
+	fmt.Println("bookingsWithStruct", bookingsWithStruct)
 
 	// infinite loop
 	// for {
