@@ -81,6 +81,11 @@ func main() {
 
 }
 
+// if we want to run mulitple files
+// go run main.go helper.go
+// or
+// go run . -> folder name to run entire file
+
 // if condition {
 // } else if condition {
 // } else {
@@ -96,8 +101,4 @@ func greetUsersValues(paramName string) { // normal functions
 
 func singleReturnValue() string {
 	return sharedVariableBTWFunc
-}
-
-func multipleReturnValues() (string, uint, bool) {
-	return sharedVariableBTWFunc, 1, false
 }
