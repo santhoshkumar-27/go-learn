@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go-learn/helper1" // why we use go-learn because we using our own packages, go-mod is import functions
 	"strings"
 )
 
@@ -77,8 +78,9 @@ func main() {
 
 	fmt.Println("Println", dummy)
 	fmt.Println("Println", dummy1)
-	fmt.Println("Println", dummy2)
+	fmt.Println("Println", dummy2, helper1.Tickes)
 
+	helper1.FunctionFromAnotherPackage()
 }
 
 // if we want to run mulitple files
@@ -102,3 +104,7 @@ func greetUsersValues(paramName string) { // normal functions
 func singleReturnValue() string {
 	return sharedVariableBTWFunc
 }
+
+// func functionFromAnotherPackage() {
+// 	fmt.Println("Dummy package")
+// } // same file declarations
