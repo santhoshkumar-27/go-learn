@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"go-learn/helper1" // why we use go-learn because we using our own packages, go-mod is import functions
+	"strconv"
 	"strings"
 )
 
@@ -10,8 +11,21 @@ import (
 var sharedVariableBTWFunc = "string values" // same like this we can share
 
 func main() {
-	// map its fixed length array
+	// arrays its fixed length array
 	var bookings = [3]string{"santhosh kumar", "kum ar", "santh osh"}
+
+	var bookingsWithMap = make([]map[string]string, 1)
+
+	// create a map for a user
+	var userData = make(map[string]string) // we can't mix the data type
+
+	userData["firstName"] = "Santhosh"
+	userData["lastName"] = "Kumar"
+	userData["email"] = "santhosh@mai;.com"
+	userData["tickets"] = strconv.FormatUint(uint64(23), 10)
+
+	fmt.Println("bookingsWithMap", bookingsWithMap)
+	fmt.Println("userData", userData)
 
 	// infinite loop
 	// for {
