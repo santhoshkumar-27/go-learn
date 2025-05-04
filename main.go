@@ -10,7 +10,7 @@ import (
 var sharedVariableBTWFunc = "string values" // same like this we can share
 
 func main() {
-
+	// map its fixed length array
 	var bookings = [3]string{"santhosh kumar", "kum ar", "santh osh"}
 
 	// infinite loop
