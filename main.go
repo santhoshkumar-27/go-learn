@@ -5,6 +5,9 @@ import (
 	"strings"
 )
 
+// global level scope we need to declare here only actual declaration, not the syentatic sugar syntax
+var sharedVariableBTWFunc = "string values" // same like this we can share
+
 func main() {
 
 	var bookings = [3]string{"santhosh kumar", "kum ar", "santh osh"}
@@ -60,9 +63,41 @@ func main() {
 		fmt.Println("Default statment")
 	}
 
+	greetUsers()
+
+	greetUsersValues("thnaku ")
+
+	singleReturnValue()
+
+	dummy, _, _ := multipleReturnValues() // ignoring first and second values
+
+	_, dummy1, _ := multipleReturnValues() // ignoring first and second values
+
+	_, _, dummy2 := multipleReturnValues() // ignoring first and second values
+
+	fmt.Println("Println", dummy)
+	fmt.Println("Println", dummy1)
+	fmt.Println("Println", dummy2)
+
 }
 
 // if condition {
 // } else if condition {
 // } else {
 // }
+
+func greetUsers() { // normal functions
+	fmt.Println("Welcome to the main area of function, can call the encapsulation code")
+}
+
+func greetUsersValues(paramName string) { // normal functions
+	fmt.Println("function with parameters", paramName)
+}
+
+func singleReturnValue() string {
+	return sharedVariableBTWFunc
+}
+
+func multipleReturnValues() (string, uint, bool) {
+	return sharedVariableBTWFunc, 1, false
+}
