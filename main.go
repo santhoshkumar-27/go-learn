@@ -5,6 +5,8 @@ import (
 	"go-learn/helper1" // why we use go-learn because we using our own packages, go-mod is import functions
 	"strconv"
 	"strings"
+	"sync"
+	"time"
 )
 
 // struct holds the different data types in the key values pairs
@@ -17,6 +19,8 @@ type UserData struct { // UserData is name of struct, type will be provide new c
 
 // package level scope we need to declare here only actual declaration, not the syentatic sugar syntax
 var sharedVariableBTWFunc = "string values" // same like this we can share
+
+var wg = sync.WaitGroup{}
 
 func main() {
 	// arrays its fixed length array
@@ -119,7 +123,14 @@ func main() {
 	fmt.Println("Println", dummy1)
 	fmt.Println("Println", dummy2, helper1.Tickes)
 
+	wg.Add(1)       // quantity of the value will be depend no of function to be executed in seperate thread
+	go sendTicket() // for concurrency we need to use simply mentioned go key word
+	// by default main thread is not to wait for the sub thread is to be executed and finished
+	// so it not excute the sendTicket
+
 	helper1.FunctionFromAnotherPackage()
+
+	wg.Wait() // wait for all the seperate thread to be finshed
 }
 
 // if we want to run mulitple files
@@ -147,3 +158,13 @@ func singleReturnValue() string {
 // func functionFromAnotherPackage() {
 // 	fmt.Println("Dummy package")
 // } // same file declarations
+
+func sendTicket() {
+	time.Sleep(10 * time.Second) // async
+	fmt.Printf("%v tickets for %v, %v \n", 20, "Santhoshkumar", "Viswanathan")
+	fmt.Println("***********************************************************")
+	fmt.Printf("Sending tickets %v to email address %v \n", 20, "santhoskumar@outloo;,com")
+	fmt.Println("***********************************************************")
+
+	wg.Done() // remove this function from the seperate thread once its done
+}
